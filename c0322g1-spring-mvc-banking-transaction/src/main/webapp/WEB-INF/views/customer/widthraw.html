@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deposit</title>
+    <link rel="stylesheet" href="/assets/bootstrap/css/style.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+
+</head>
+<body>
+<div class="container">
+    <div class="title">
+        <div class="row">
+            <div class="col-sm-8">
+                <h1>Deposit money into customer's account</h1>
+            </div>
+            <div class="col-sm-4">
+                <a href="/customers" class="btn btn-outline-light" style="margin-right: 40px;">
+                    <i class="fas fa-list"></i>
+                    <span>Customer list</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <form class="form-group" method="POST" th:object="${customer}">
+        <fieldset>
+            <div class="row">
+                <div class="col-sm-6">
+                    <label class="form-label">Customer ID</label>
+                    <input type="text" th:field="*{id}" class="form-control" readonly>
+                </div>
+                <div class="col-sm-6">
+                    <label  class="form-label">Full name</label>
+                    <input type="text" th:field="*{fullName}" class="form-control" readonly>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <label class="form-label">Current balance ($)</label>
+                    <input type="text" th:field="*{balance}" class="form-control" readonly>
+                </div>
+                <div class="col-sm-6" th:object="${withdraw}">
+                    <label  class="form-label">Transaction Amount ($)</label>
+                    <input type="text" th:field="*{transactionAmount}" class="form-control">
+                </div>
+            </div>
+
+            <div class="row create">
+                <div class="col-sm-12">
+                    <button type="submit" class="btn btn-outline-success">
+                        <i class="fas fa-plus"> Withdraw</i>
+                    </button>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+</div>
+<!--<footer>-->
+<!--    <div class="container">-->
+<!--        <th:block th:if="${errors}">-->
+<!--            <h3>Please correct errors below:</h3>-->
+<!--            <ul>-->
+<!--                <li th:each="err : ${#fields.errors('withdraw.*')}" th:text="${err}"></li>-->
+<!--            </ul>-->
+<!--        </th:block>-->
+<!--    </div>-->
+<!--</footer>-->
+</body>
+</html>

@@ -1,0 +1,68 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.title{
+    background-color: rgb(65, 65, 245);
+    width: 100%;
+    min-height: 88px;
+    border-radius: 3px;
+}
+
+.col-sm-5, .col-sm-8 {
+    padding: 0px 40px;
+}
+
+.col-sm-5 h1, .col-sm-8 h1 {
+    line-height: 88px;
+    color: #fff;
+    font-weight: 500;
+    font-size: 30px;
+}
+
+.col-sm-7 a, .col-sm-4 a{
+    float: right;
+    margin: 26px 10px;
+}
+
+table {
+    text-align: center;
+    width: 100%;
+}
+
+thead tr {
+    height: 40px;
+    background-color: rgb(0, 180, 0);
+}
+
+thead tr th {
+    color: #fff;
+    font-weight: bolder;
+}
+
+tbody tr {
+    height: 55px;
+    border-bottom: 1px solid #e2e0e0;
+}
+
+tfoot {
+    border-bottom: 1px solid #e2e0e0;
+    border-top:1px solid red;
+}
+
+tfoot tr td {
+    margin-top: 10px;
+    color: #333;
+    font-size: 20px;
+}
+
+.form-label {
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.create {
+    margin-top: 20px;
+}

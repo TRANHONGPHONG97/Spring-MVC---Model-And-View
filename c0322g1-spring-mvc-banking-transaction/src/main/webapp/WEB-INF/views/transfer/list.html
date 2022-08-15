@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TransferInfo</title>
+    <link rel="stylesheet" href="/assets/bootstrap/css/style.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+
+</head>
+
+<body>
+<div class="container">
+    <div class="title">
+        <div class="row">
+            <div class="col-sm-5">
+                <h1>Transfer money Information</h1>
+            </div>
+            <div class="col-sm-7">
+                <a href="/customers" class="btn btn-outline-light">
+                    <i class="fas fa-list"></i>
+                    <span>Customer list</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <table>
+        <thead>
+        <tr>
+            <th class="text-center">#</th>
+            <th class="text-center">Sender ID</th>
+            <th class="text-center">Sender Name</th>
+            <th class="text-center">Recipient ID</th>
+            <th class="text-center">Recipient Name</th>
+            <th class="text-center">Transfer Amount ($)</th>
+            <th class="text-center">Fees (%)</th>
+            <th class="text-center">Fees Amount ($)</th>
+        </tr>
+        </thead>
+        <tbody>
+        <th:block th:each="item : ${transfers}">
+            <tr>
+                <td th:text="${item.id}"></td>
+                <td th:text="${item.senderId}"></td>
+                <td th:text="${item.senderName}"></td>
+                <td th:text="${item.recipientId}"></td>
+                <td th:text="${item.recipientName}"></td>
+                <td class="text-end" th:text="${item.transferAmount}"></td>
+                <td class="text-end" th:text="${item.fees}"></td>
+                <td class="text-end" th:text="${item.feesAmount}"></td>
+            </tr>
+        </th:block>
+        </tbody>
+    </table>
+</div>
+</body>
+
+</html>
